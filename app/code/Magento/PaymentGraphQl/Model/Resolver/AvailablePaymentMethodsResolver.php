@@ -10,7 +10,7 @@ namespace Magento\PaymentGraphQl\Model\Resolver;
 /**
  * Get list of active payment methods resolver.
  */
-class ActivePaymentMethodListResolver
+class AvailablePaymentMethodsResolver
 {
 
 }

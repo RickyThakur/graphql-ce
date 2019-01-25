@@ -1,14 +1,14 @@
 # Copyright © Magento, Inc. All rights reserved.
 # See COPYING.txt for license details.
-type Query {
-    activePaymentMethodList : ActivePaymentMethodList @resolver(class: "Magento\\PaymentGraphQl\\Model\\Resolver\\ActivePaymentMethodListResolver") @doc(description: "The payment method list query")
+type Cart {
+    available_payment_methods : AvailablePaymentMethods @resolver(class: "Magento\\PaymentGraphQl\\Model\\Resolver\\AvailablePaymentMethodsResolver") @doc(description: "The payment method list query")
 }
 
-type ActivePaymentMethodList @doc(description: "The type contains list of active payment methods") {
-    payment_methods : [PaymentMethod] @doc(description: "Array of active payment methods")
+type AvailablePaymentMethods @doc(description: "The type contains list of available payment methods") {
+    payment_methods : [CheckoutPaymentMethod] @doc(description: "Array of available payment methods")
 }
 
-type PaymentMethod @doc(description: "The type contains list of active payment methods") {
+type CheckoutPaymentMethod @doc(description: "The type contains list of active payment methods") {
     code : Int @doc(description: "The payment method code")
     title : String @doc(description: "The payment method title.")
     aditional_data: PaymentAdditionalInfoInterface @doc(description: "Payment additional info object")
