@@ -186,6 +186,7 @@
         "magento/module-offline-shipping": "*",
         "magento/module-page-cache": "*",
         "magento/module-payment": "*",
+        "magento/module-payment-graph-ql": "*",
         "magento/module-paypal": "*",
         "magento/module-persistent": "*",
         "magento/module-product-alert": "*",
