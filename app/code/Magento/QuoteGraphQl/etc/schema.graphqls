@@ -103,7 +103,7 @@ type Cart {
     applied_coupon: AppliedCoupon
     shipping_addresses: [CartAddress]! @resolver(class: "\\Magento\\QuoteGraphQl\\Model\\Resolver\\ShippingAddresses")
     billing_address: CartAddress! @resolver(class: "\\Magento\\QuoteGraphQl\\Model\\Resolver\\BillingAddress")
-    available_payment_methods : AvailablePaymentMethods @resolver(class: "Magento\\QuoteGraphQl\\Model\\Resolver\\AvailablePaymentMethodsResolver") @doc(description: "Available payment methods")
+    available_payment_methods : [CheckoutPaymentMethod]  @resolver(class: "Magento\\QuoteGraphQl\\Model\\Resolver\\AvailablePaymentMethodsResolver") @doc(description: "Available payment methods")
 }
 
 type CartAddress {
@@ -147,12 +147,8 @@ type CheckoutShippingMethod {
     # TODO: Add more complex structure for shipping rates
 }
 
-type AvailablePaymentMethods @doc(description: "The type contains list of available payment methods") {
-    payment_methods : [CheckoutPaymentMethod] @doc(description: "Array of available payment methods")
-}
-
 type CheckoutPaymentMethod @doc(description: "The type contains list of active payment methods") {
-    code : Int @doc(description: "The payment method code")
+    code : String @doc(description: "The payment method code")
     title : String @doc(description: "The payment method title.")
 }
 
